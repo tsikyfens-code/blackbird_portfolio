@@ -368,7 +368,7 @@ body {
     padding:
         calc(var(--header-height) + 80px)
         clamp(50px, 7vw, 130px)
-        80px;
+        70px;
 
     overflow: hidden;
 }
@@ -527,12 +527,19 @@ body {
 
     min-width: 170px;
 
-    padding: 13px 20px;
+    padding: 14px 22px;
 
-    border: 1px solid var(--border);
+    border: 1px solid rgba(129, 146, 184, 0.24);
     border-radius: 3px;
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    color: var(--silver);
 
     font-size: 0.73rem;
     font-weight: 600;
@@ -544,9 +551,13 @@ body {
         border-color var(--transition-fast),
         background var(--transition-fast),
         box-shadow var(--transition-fast),
-        color var(--transition-fast);
+        color var(--transition-fast),
+        transform var(--transition-fast);
 }
 
+.dual-panel__action:hover {
+    transform: translateY(-2px);
+}
 
 /* CODER BUTTON */
 .dual-panel--coder .dual-panel__action:hover {
@@ -754,6 +765,126 @@ body {
     color: var(--text-secondary);
 }
 
+/* ============================================================
+   TECHNICAL BACKGROUND ELEMENTS
+============================================================ */
+
+.dual-panel__background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.tech-element {
+    position: absolute;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: clamp(0.65rem, 0.8vw, 0.9rem);
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+
+    user-select: none;
+}
+
+
+/* ============================================================
+   CODER BACKGROUND
+============================================================ */
+
+.dual-panel__background--coder .tech-element {
+    color: var(--signal-cyan);
+
+    opacity: 0.035;
+}
+
+
+.dual-panel__background--coder .tech-element--1 {
+    top: 20%;
+    left: 8%;
+}
+
+.dual-panel__background--coder .tech-element--2 {
+    top: 32%;
+    left: 64%;
+}
+
+.dual-panel__background--coder .tech-element--3 {
+    top: 71%;
+    left: 14%;
+}
+
+.dual-panel__background--coder .tech-element--4 {
+    top: 80%;
+    left: 68%;
+
+    font-size: 2rem;
+}
+
+.dual-panel__background--coder .tech-element--5 {
+    top: 16%;
+    left: 73%;
+}
+
+.dual-panel__background--coder .tech-element--6 {
+    top: 63%;
+    left: 76%;
+}
+
+
+/* ============================================================
+   ADMIN SYS BACKGROUND
+============================================================ */
+
+.dual-panel__background--admin .tech-element {
+    color: #8178ff;
+
+    opacity: 0.035;
+}
+
+
+.dual-panel__background--admin .tech-element--1 {
+    top: 18%;
+    right: 12%;
+}
+
+.dual-panel__background--admin .tech-element--2 {
+    top: 28%;
+    right: 65%;
+}
+
+.dual-panel__background--admin .tech-element--3 {
+    top: 72%;
+    right: 14%;
+}
+
+.dual-panel__background--admin .tech-element--4 {
+    top: 82%;
+    right: 66%;
+}
+
+.dual-panel__background--admin .tech-element--5 {
+    top: 15%;
+    right: 70%;
+}
+
+.dual-panel__background--admin .tech-element--6 {
+    top: 64%;
+    right: 77%;
+
+    font-size: 1.8rem;
+}
 
 /* ============================================================
    16. RESPONSIVE MINIMAL
