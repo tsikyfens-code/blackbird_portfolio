@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BLACKBIRD — Coder & Admin Sys</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-home">
+
+    <!-- ======================================================
+         HEADER
+    ======================================================= -->
+    <header class="site-header">
+
+        <nav class="main-nav" aria-label="Navigation principale">
+
+            <!-- Identité BLACKBIRD -->
+            <a
+                class="brand"
+                href="#home"
+                aria-label="BLACKBIRD — Accueil"
+            >
+                <span class="brand__logo" aria-hidden="true">
+                    <!-- Le véritable logo sera intégré après validation -->
+                    BLACKBIRD
+                </span>
+            </a>
+
+
+            <!-- Navigation principale -->
+            <ul class="main-nav__links">
+                <li>
+                    <a href="#home" aria-current="page">
+                        Accueil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#dual-mode">
+                        Dual Mode
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- Sélecteur de langue -->
+            <div
+                class="language-switch"
+                aria-label="Sélection de la langue"
+            >
+                <span
+                    class="language-switch__item is-active"
+                    aria-current="true"
+                >
+                    FR
+                </span>
+
+                <span
+                    class="language-switch__separator"
+                    aria-hidden="true"
+                >
+                    |
+                </span>
+
+                <span class="language-switch__item">
+                    EN
+                </span>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ======================================================
+         MAIN
+    ======================================================= -->
+    <main id="home">
+
+        <!-- ==================================================
+             HERO — BLACKBIRD DUAL MODE
+        =================================================== -->
+        <section
+            class="dual-hero"
+            id="dual-mode"
+            aria-labelledby="blackbird-title"
+        >
+
+            <!-- ==============================================
+                 CODER
+            =============================================== -->
+            <article
+                class="dual-panel dual-panel--coder"
+                id="coder"
+            >
+
+                <div class="dual-panel__content">
+
+                    <span
+                        class="dual-panel__symbol"
+                        aria-hidden="true"
+                    >
+                        &lt;/&gt;
+                    </span>
+
+                    <h2 class="dual-panel__title">
+                        CODER
+                    </h2>
+
+                    <p class="dual-panel__description">
+                        Développement, programmation et automatisation.
+                    </p>
+
+                    <ul class="dual-panel__topics">
+                        <li>Développement web</li>
+                        <li>Développement logiciel</li>
+                        <li>Automatisation</li>
+                        <li>Applications</li>
+                    </ul>
+
+                    <a
+                        class="dual-panel__action"
+                        href="#coder-preview"
+                    >
+                        Explorer Coder
+                    </a>
+
+                </div>
+
+                <!-- Éléments graphiques futurs -->
+                <div
+                    class="dual-panel__background"
+                    aria-hidden="true"
+                >
+                </div>
+
+            </article>
+
+
+            <!-- ==============================================
+                 IDENTITÉ CENTRALE BLACKBIRD
+            =============================================== -->
+            <div class="blackbird-core">
+
+                <div class="blackbird-core__glow" aria-hidden="true"></div>
+
+                <img
+                    class="blackbird-core__logo"
+                    src="assets/logo/blackbird-logo.png"
+                    alt="BLACKBIRD"
+                    width="300"
+                    height="300"
+                >
+
+                <h1
+                    class="blackbird-core__title"
+                    id="blackbird-title"
+                >
+                    BLACKBIRD
+                </h1>
+
+                <p class="blackbird-core__subtitle">
+                    CODER <span aria-hidden="true">+</span> ADMIN SYS
+                </p>
+
+            </div>
+
+
+            <!-- ==============================================
+                 ADMIN SYS
+            =============================================== -->
+            <article
+                class="dual-panel dual-panel--admin"
+                id="admin-sys"
+            >
+
+                <div class="dual-panel__content">
+
+                    <span
+                        class="dual-panel__symbol"
+                        aria-hidden="true"
+                    >
+                        &gt;_
+                    </span>
+
+                    <h2 class="dual-panel__title">
+                        ADMIN SYS
+                    </h2>
+
+                    <p class="dual-panel__description">
+                        Systèmes, réseaux et infrastructure.
+                    </p>
+
+                    <ul class="dual-panel__topics">
+                        <li>Systèmes</li>
+                        <li>Réseaux</li>
+                        <li>Serveurs</li>
+                        <li>Virtualisation</li>
+                    </ul>
+
+                    <a
+                        class="dual-panel__action"
+                        href="#admin-preview"
+                    >
+                        Explorer Admin Sys
+                    </a>
+
+                </div>
+
+                <!-- Éléments graphiques futurs -->
+                <div
+                    class="dual-panel__background"
+                    aria-hidden="true"
+                >
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================================================
+             PREMIÈRES CARTES
+        =================================================== -->
+        <section
+            class="mode-preview"
+            aria-label="Aperçu des domaines BLACKBIRD"
+        >
+
+            <!-- Carte Coder -->
+            <article
+                class="mode-card mode-card--coder"
+                id="coder-preview"
+            >
+
+                <span
+                    class="mode-card__symbol"
+                    aria-hidden="true"
+                >
+                    &lt;/&gt;
+                </span>
+
+                <h2>
+                    Coder
+                </h2>
+
+                <p>
+                    Développement et programmation.
+                </p>
+
+            </article>
+
+
+            <!-- Carte Admin Sys -->
+            <article
+                class="mode-card mode-card--admin"
+                id="admin-preview"
+            >
+
+                <span
+                    class="mode-card__symbol"
+                    aria-hidden="true"
+                >
+                    &gt;_
+                </span>
+
+                <h2>
+                    Admin Sys
+                </h2>
+
+                <p>
+                    Administration système, réseau et infrastructure.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
