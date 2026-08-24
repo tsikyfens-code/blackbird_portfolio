@@ -887,6 +887,225 @@ body {
 }
 
 /* ============================================================
+   DUAL MODE INTERACTION — DESKTOP
+============================================================ */
+
+@media (min-width: 901px) {
+
+    /*
+       La grille peut passer progressivement :
+       50 / 50
+       60 / 40
+       40 / 60
+    */
+    .dual-hero {
+        transition:
+            grid-template-columns 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+
+    /*
+       Les deux panneaux peuvent légèrement changer
+       de luminosité.
+    */
+    .dual-panel {
+        transition:
+            opacity 320ms ease,
+            filter 320ms ease,
+            background 420ms ease;
+    }
+
+
+    /*
+       Le contenu accompagne subtilement
+       le changement de mode.
+    */
+    .dual-panel__content {
+        transition:
+            transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 320ms ease;
+    }
+
+
+    /*
+       Le noyau BLACKBIRD suivra
+       la nouvelle séparation.
+    */
+    .blackbird-core {
+        transition:
+            left 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+
+    /*
+       Ligne centrale
+    */
+    .dual-hero::after {
+        transition:
+            left 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+
+    /*
+       Halo central
+    */
+    .dual-hero::before {
+        transition:
+            left 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+
+    /* ========================================================
+       CODER ACTIVE
+    ======================================================== */
+
+    .dual-hero.is-coder-active {
+        grid-template-columns: 60% 40%;
+    }
+
+
+    .dual-hero.is-coder-active .blackbird-core,
+    .dual-hero.is-coder-active::before,
+    .dual-hero.is-coder-active::after {
+        left: 60%;
+    }
+
+
+    .dual-hero.is-coder-active .dual-panel--coder {
+        background:
+            radial-gradient(
+                circle at 35% 50%,
+                rgba(0, 208, 240, 0.075),
+                transparent 43%
+            ),
+            linear-gradient(
+                115deg,
+                rgba(0, 177, 255, 0.075),
+                transparent 48%
+            );
+    }
+
+
+    .dual-hero.is-coder-active .dual-panel--coder
+    .dual-panel__content {
+        transform: translateX(14px);
+    }
+
+
+    .dual-hero.is-coder-active .dual-panel--admin {
+        opacity: 0.58;
+
+        filter:
+            saturate(0.75)
+            brightness(0.82);
+    }
+
+
+    .dual-hero.is-coder-active .dual-panel--admin
+    .dual-panel__content {
+        transform: translateX(18px);
+    }
+
+
+    /* ========================================================
+       ADMIN SYS ACTIVE
+    ======================================================== */
+
+    .dual-hero.is-admin-active {
+        grid-template-columns: 40% 60%;
+    }
+
+
+    .dual-hero.is-admin-active .blackbird-core,
+    .dual-hero.is-admin-active::before,
+    .dual-hero.is-admin-active::after {
+        left: 40%;
+    }
+
+
+    .dual-hero.is-admin-active .dual-panel--admin {
+        background:
+            radial-gradient(
+                circle at 65% 50%,
+                rgba(143, 44, 249, 0.065),
+                transparent 43%
+            ),
+            linear-gradient(
+                245deg,
+                rgba(105, 70, 255, 0.085),
+                transparent 48%
+            );
+    }
+
+
+    .dual-hero.is-admin-active .dual-panel--admin
+    .dual-panel__content {
+        transform: translateX(-14px);
+    }
+
+
+    .dual-hero.is-admin-active .dual-panel--coder {
+        opacity: 0.58;
+
+        filter:
+            saturate(0.75)
+            brightness(0.82);
+    }
+
+
+    .dual-hero.is-admin-active .dual-panel--coder
+    .dual-panel__content {
+        transform: translateX(-18px);
+    }
+
+
+    /* ========================================================
+       ACTIVE SYMBOLS
+    ======================================================== */
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder
+    .dual-panel__symbol {
+        text-shadow:
+            0 0 22px rgba(0, 208, 240, 0.30),
+            0 0 55px rgba(0, 208, 240, 0.15);
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin
+    .dual-panel__symbol {
+        text-shadow:
+            0 0 22px rgba(113, 109, 255, 0.30),
+            0 0 55px rgba(143, 44, 249, 0.13);
+    }
+
+
+    /* ========================================================
+       TECHNICAL BACKGROUND
+    ======================================================== */
+
+    .tech-element {
+        transition:
+            opacity 320ms ease;
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder
+    .tech-element {
+        opacity: 0.085;
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin
+    .tech-element {
+        opacity: 0.085;
+    }
+}
+
+/* ============================================================
    16. RESPONSIVE MINIMAL
    Le vrai responsive sera travaillé à l'étape dédiée.
 ============================================================ */
