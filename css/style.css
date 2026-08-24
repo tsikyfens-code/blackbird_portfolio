@@ -1110,53 +1110,434 @@ body {
    Le vrai responsive sera travaillé à l'étape dédiée.
 ============================================================ */
 
+/* ============================================================
+   RESPONSIVE — TABLET & MOBILE
+============================================================ */
+
 @media (max-width: 900px) {
 
+    /* --------------------------------------------------------
+       GLOBAL
+    --------------------------------------------------------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* --------------------------------------------------------
+       HEADER
+    --------------------------------------------------------- */
+
+    .site-header {
+        height: 64px;
+    }
+
     .main-nav {
+        width: calc(100% - 40px);
+
         grid-template-columns: 1fr auto;
+    }
+
+    .brand {
+        font-size: 0.78rem;
+
+        letter-spacing: 0.18em;
     }
 
     .main-nav__links {
         display: none;
     }
 
-    .dual-hero {
-        grid-template-columns: 1fr;
+    .language-switch {
+        font-size: 0.68rem;
     }
+
+
+    /* --------------------------------------------------------
+       HERO
+    --------------------------------------------------------- */
+
+    .dual-hero {
+        position: relative;
+
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        padding-top: 245px;
+
+        overflow: hidden;
+    }
+
+
+    /*
+       On supprime la séparation verticale desktop.
+    */
+    .dual-hero::after {
+        display: none;
+    }
+
+
+    /*
+       Halo central mobile.
+    */
+    .dual-hero::before {
+        top: 145px;
+        left: 50%;
+
+        width: 320px;
+        height: 320px;
+
+        opacity: 0.8;
+
+        transform: translate(-50%, -50%);
+    }
+
+
+    /* --------------------------------------------------------
+       BLACKBIRD CORE
+    --------------------------------------------------------- */
+
+    .blackbird-core {
+        display: flex;
+
+        position: absolute;
+
+        top: 92px;
+        left: 50%;
+
+        width: clamp(120px, 28vw, 165px);
+
+        transform: translateX(-50%);
+
+        z-index: 20;
+    }
+
+    .blackbird-core__glow {
+        width: 170%;
+    }
+
+    .blackbird-core__title {
+        margin-top: 11px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.28em;
+    }
+
+    .blackbird-core__subtitle {
+        margin-top: 5px;
+
+        font-size: 0.52rem;
+
+        white-space: nowrap;
+    }
+
+
+    /* --------------------------------------------------------
+       PANELS
+    --------------------------------------------------------- */
 
     .dual-panel {
-        min-height: 70vh;
+        width: 100%;
+        min-height: auto;
+
+        justify-content: flex-start;
 
         padding:
-            120px
-            7vw
-            80px;
+            65px
+            clamp(24px, 7vw, 60px);
+
+        text-align: left;
+
+        border-top: 1px solid var(--border);
     }
+
+
+    .dual-panel--coder {
+        background:
+            radial-gradient(
+                circle at 15% 50%,
+                rgba(0, 208, 240, 0.07),
+                transparent 45%
+            );
+    }
+
 
     .dual-panel--admin {
         justify-content: flex-start;
 
         text-align: left;
+
+        background:
+            radial-gradient(
+                circle at 85% 50%,
+                rgba(113, 109, 255, 0.07),
+                transparent 45%
+            );
     }
 
+
+    .dual-panel__content {
+        width: 100%;
+        max-width: 580px;
+
+        margin: 0 auto;
+    }
+
+
+    /* --------------------------------------------------------
+       SYMBOLS
+    --------------------------------------------------------- */
+
+    .dual-panel__symbol {
+        margin-bottom: 18px;
+
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+
+    /* --------------------------------------------------------
+       TITLES
+    --------------------------------------------------------- */
+
+    .dual-panel__title {
+        margin-bottom: 14px;
+
+        font-size: clamp(2.4rem, 11vw, 4.2rem);
+
+        line-height: 0.95;
+    }
+
+
+    /* --------------------------------------------------------
+       DESCRIPTION
+    --------------------------------------------------------- */
+
+    .dual-panel__description,
     .dual-panel--admin .dual-panel__description {
+        max-width: 480px;
+
         margin-left: 0;
+        margin-bottom: 24px;
+
+        font-size: 0.95rem;
     }
 
+
+    /* --------------------------------------------------------
+       TAGS
+    --------------------------------------------------------- */
+
+    .dual-panel__topics,
     .dual-panel--admin .dual-panel__topics {
         justify-content: flex-start;
+
+        gap: 7px;
+
+        margin-bottom: 30px;
     }
 
-    .dual-hero::after {
-        display: none;
+
+    .dual-panel__topics li {
+        padding: 7px 10px;
+
+        font-size: 0.66rem;
+    }
+
+
+    /* --------------------------------------------------------
+       BUTTONS
+    --------------------------------------------------------- */
+
+    .dual-panel__action {
+        min-height: 46px;
+
+        padding: 13px 18px;
+
+        touch-action: manipulation;
+    }
+
+
+    /* --------------------------------------------------------
+       TECHNICAL BACKGROUND
+    --------------------------------------------------------- */
+
+    .tech-element {
+        opacity: 0.025;
+    }
+
+
+    /* --------------------------------------------------------
+       PREVIEW CARDS
+    --------------------------------------------------------- */
+
+    .mode-preview {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 60px 0;
+    }
+
+    .mode-card {
+        min-height: 190px;
+
+        padding: 28px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE
+============================================================ */
+
+@media (max-width: 520px) {
+
+    .main-nav {
+        width: calc(100% - 28px);
+    }
+
+
+    .brand {
+        font-size: 0.70rem;
+    }
+
+
+    .language-switch {
+        gap: 6px;
+
+        font-size: 0.62rem;
+    }
+
+
+    /* --------------------------------------------------------
+       HERO
+    --------------------------------------------------------- */
+
+    .dual-hero {
+        padding-top: 220px;
+    }
+
+
+    /* --------------------------------------------------------
+       LOGO
+    --------------------------------------------------------- */
+
+    .blackbird-core {
+        top: 82px;
+
+        width: 125px;
+    }
+
+
+    .blackbird-core__title {
+        font-size: 0.56rem;
+    }
+
+
+    .blackbird-core__subtitle {
+        font-size: 0.45rem;
+    }
+
+
+    /* --------------------------------------------------------
+       PANELS
+    --------------------------------------------------------- */
+
+    .dual-panel {
+        padding:
+            50px
+            22px;
+    }
+
+
+    .dual-panel__symbol {
+        font-size: 2.5rem;
+    }
+
+
+    .dual-panel__title {
+        font-size: clamp(2.5rem, 15vw, 3.7rem);
+    }
+
+
+    .dual-panel__description {
+        font-size: 0.88rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* --------------------------------------------------------
+       TAGS
+    --------------------------------------------------------- */
+
+    .dual-panel__topics {
+        gap: 6px;
+    }
+
+
+    .dual-panel__topics li {
+        font-size: 0.60rem;
+
+        letter-spacing: 0.04em;
+    }
+
+
+    /* --------------------------------------------------------
+       BUTTON
+    --------------------------------------------------------- */
+
+    .dual-panel__action {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+
+    /* --------------------------------------------------------
+       CARDS
+    --------------------------------------------------------- */
+
+    .mode-preview {
+        width: calc(100% - 28px);
+
+        padding: 40px 0;
+    }
+
+
+    .mode-card {
+        padding: 24px;
+
+        border-radius: 4px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — VERY SMALL DEVICES
+============================================================ */
+
+@media (max-width: 360px) {
+
+    .dual-panel {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .dual-panel__title {
+        font-size: 2.35rem;
+    }
+
+    .dual-panel__topics li {
+        font-size: 0.56rem;
     }
 
     .blackbird-core {
-        display: none;
-    }
-
-    .mode-preview {
-        grid-template-columns: 1fr;
+        width: 110px;
     }
 }
 
