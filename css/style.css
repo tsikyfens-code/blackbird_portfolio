@@ -258,6 +258,16 @@ body {
     color: var(--text-muted);
 }
 
+.language-switch__item {
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.language-switch__item:not(.is-active):hover {
+    color: var(--text-primary);
+}
+
 .language-switch__item.is-active {
     color: var(--coder-primary);
 }
@@ -1516,6 +1526,7 @@ body {
         border-radius: 4px;
     }
 }
+
 
 /* ============================================================
    RESPONSIVE — VERY SMALL DEVICES
