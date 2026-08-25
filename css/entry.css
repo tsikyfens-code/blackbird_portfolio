@@ -1,0 +1,296 @@
+/* ============================================================
+   BLACKBIRD — LANGUAGE ENTRY PAGE
+
+   Styles propres à la page racine :
+   /
+   - Sélection Français / English
+============================================================ */
+
+
+/* ============================================================
+   1. PAGE
+============================================================ */
+
+.language-entry-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 35% 45%,
+            rgba(0, 208, 240, 0.055),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 65% 45%,
+            rgba(113, 109, 255, 0.055),
+            transparent 32%
+        ),
+        var(--obsidian);
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   2. ENTRY CONTAINER
+============================================================ */
+
+.language-entry {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 40px 30px;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   3. BACKGROUND GRID
+============================================================ */
+
+.language-entry::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(129, 146, 184, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(129, 146, 184, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 52px 52px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 72%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   4. CONTENT
+============================================================ */
+
+.language-entry__content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 560px);
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   5. SYMBOL
+============================================================ */
+
+.language-entry__symbol {
+    margin-bottom: 30px;
+
+    color: var(--signal-cyan);
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-shadow:
+        0 0 24px rgba(0, 208, 240, 0.12);
+}
+
+
+/* ============================================================
+   6. TITLE
+============================================================ */
+
+.language-entry__title {
+    color: var(--silver);
+
+    font-size:
+        clamp(2.8rem, 9vw, 5.5rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1;
+}
+
+
+/* ============================================================
+   7. SUBTITLE
+============================================================ */
+
+.language-entry__subtitle {
+    margin-top: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   8. LANGUAGE CHOICES
+============================================================ */
+
+.language-entry__choices {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.language-entry__choices a {
+    position: relative;
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 20px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(129, 146, 184, 0.20);
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.028),
+            rgba(255, 255, 255, 0.010)
+        );
+
+    color: var(--silver);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+
+    transition:
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+/* ============================================================
+   9. FRANÇAIS
+============================================================ */
+
+.language-entry__choices a:first-child:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--signal-cyan);
+
+    color: var(--signal-cyan);
+
+    background:
+        rgba(0, 208, 240, 0.045);
+
+    box-shadow:
+        0 0 28px rgba(0, 208, 240, 0.06);
+}
+
+
+/* ============================================================
+   10. ENGLISH
+============================================================ */
+
+.language-entry__choices a:last-child:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--admin-primary);
+
+    color: #9b92ff;
+
+    background:
+        rgba(113, 109, 255, 0.045);
+
+    box-shadow:
+        0 0 28px rgba(113, 109, 255, 0.06);
+}
+
+
+/* ============================================================
+   11. MOBILE
+============================================================ */
+
+@media (max-width: 520px) {
+
+    .language-entry {
+        padding:
+            35px
+            22px;
+    }
+
+
+    .language-entry__symbol {
+        font-size: 0.72rem;
+    }
+
+
+    .language-entry__title {
+        font-size:
+            clamp(2.6rem, 15vw, 4rem);
+    }
+
+
+    .language-entry__subtitle {
+        font-size: 0.82rem;
+    }
+
+
+    .language-entry__choices {
+        margin-top: 35px;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .language-entry__choices a {
+        min-height: 50px;
+    }
+}

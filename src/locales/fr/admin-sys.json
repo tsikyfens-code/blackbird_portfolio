@@ -100,5 +100,13 @@
 
     "virtualization_image_caption": "Création, configuration et administration d’environnements virtualisés.",
 
-    "admin_end_text": "Systèmes. Serveurs. Réseaux. Virtualisation."
+    "admin_end_text": "Systèmes. Serveurs. Réseaux. Virtualisation.",
+    
+    "systems_image_alt": "Installation et configuration de systèmes Windows et Linux",
+
+    "servers_image_alt": "Administration de serveurs Linux et Windows et gestion Active Directory",
+
+    "networks_image_alt": "Câblage réseau et configuration d’équipements réseau",
+
+    "virtualization_image_alt": "Environnement de virtualisation avec machines virtuelles"
 }

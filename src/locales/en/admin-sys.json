@@ -100,5 +100,13 @@
 
     "virtualization_image_caption": "Creation, configuration and administration of virtualized environments.",
 
-    "admin_end_text": "Systems. Servers. Networks. Virtualization."
+    "admin_end_text": "Systems. Servers. Networks. Virtualization.",
+
+    "systems_image_alt": "Windows and Linux operating system installation and configuration",
+
+    "servers_image_alt": "Linux and Windows server administration and Active Directory management",
+
+    "networks_image_alt": "Network cabling and network equipment configuration",
+
+    "virtualization_image_alt": "Virtualization environment with virtual machines"
 }

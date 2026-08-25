@@ -1,0 +1,1348 @@
+/* ============================================================
+   BLACKBIRD — HOME PAGE
+
+   Styles propres à la Homepage :
+   - Background
+   - Dual Mode
+   - CODER / ADMIN SYS
+   - Noyau BLACKBIRD
+   - Décor technique
+   - Cartes
+   - Interaction 60 / 40
+   - Responsive Homepage
+============================================================ */
+
+
+/* ============================================================
+   1. HOME PAGE BACKGROUND
+============================================================ */
+
+.page-home {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 25% 40%,
+            rgba(0, 174, 255, 0.06),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(105, 70, 255, 0.07),
+            transparent 32%
+        ),
+        var(--bg-primary);
+}
+
+
+/* ============================================================
+   2. DUAL HERO
+============================================================ */
+
+.dual-hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* Halo central */
+.dual-hero::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 430px;
+    height: 430px;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle at 42% 50%,
+            rgba(0, 208, 240, 0.065),
+            transparent 47%
+        ),
+        radial-gradient(
+            circle at 58% 50%,
+            rgba(143, 44, 249, 0.045),
+            transparent 47%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    z-index: 4;
+}
+
+
+/* Séparation centrale */
+.dual-hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: var(--header-height);
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+
+            transparent 0%,
+
+            rgba(0, 208, 240, 0.08) 18%,
+
+            rgba(255, 255, 255, 0.10) 36%,
+
+            transparent 42%,
+            transparent 63%,
+
+            rgba(143, 44, 249, 0.08) 78%,
+
+            transparent 100%
+        );
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   3. DUAL PANELS
+============================================================ */
+
+.dual-panel {
+    position: relative;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        calc(var(--header-height) + 45px)
+        clamp(50px, 7vw, 130px)
+        70px;
+
+    overflow: hidden;
+}
+
+
+/* CODER */
+.dual-panel--coder {
+    justify-content: flex-start;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(0, 177, 255, 0.055),
+            transparent 45%
+        );
+}
+
+
+/* ADMIN SYS */
+.dual-panel--admin {
+    justify-content: flex-end;
+
+    text-align: right;
+
+    background:
+        linear-gradient(
+            245deg,
+            rgba(105, 70, 255, 0.065),
+            transparent 45%
+        );
+}
+
+
+.dual-panel__content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 520px);
+}
+
+
+/* ============================================================
+   4. SYMBOLS
+============================================================ */
+
+.dual-panel__symbol {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: clamp(2.4rem, 4vw, 4.8rem);
+    font-weight: 700;
+
+    letter-spacing: -0.08em;
+}
+
+
+/* CODER */
+.dual-panel--coder .dual-panel__symbol {
+    color: var(--coder-primary);
+
+    text-shadow:
+        0 0 30px var(--coder-glow);
+}
+
+
+/* ADMIN SYS */
+.dual-panel--admin .dual-panel__symbol {
+    color: var(--admin-primary);
+
+    text-shadow:
+        0 0 30px var(--admin-glow);
+}
+
+
+/* ============================================================
+   5. TITLES
+============================================================ */
+
+.dual-panel__title {
+    margin-bottom: 15px;
+
+    font-size: clamp(2.8rem, 5vw, 6.2rem);
+    font-weight: 700;
+
+    letter-spacing: -0.045em;
+
+    line-height: 0.95;
+}
+
+
+/* ============================================================
+   6. DESCRIPTIONS
+============================================================ */
+
+.dual-panel__description {
+    max-width: 430px;
+
+    margin-bottom: 28px;
+
+    color: var(--text-secondary);
+
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+}
+
+
+.dual-panel--admin .dual-panel__description {
+    margin-left: auto;
+}
+
+
+/* ============================================================
+   7. TOPICS
+============================================================ */
+
+.dual-panel__topics {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+}
+
+
+.dual-panel--admin .dual-panel__topics {
+    justify-content: flex-end;
+}
+
+
+.dual-panel__topics li {
+    padding: 7px 11px;
+
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: var(--text-secondary);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   8. ACTION BUTTONS
+============================================================ */
+
+.dual-panel__action {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 14px 22px;
+
+    border:
+        1px solid
+        rgba(129, 146, 184, 0.24);
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    color: var(--silver);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        box-shadow var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.dual-panel__action:hover {
+    transform: translateY(-2px);
+}
+
+
+/* CODER */
+.dual-panel--coder .dual-panel__action:hover {
+    border-color: var(--coder-primary);
+
+    background:
+        rgba(0, 208, 240, 0.07);
+
+    color: var(--coder-primary);
+
+    box-shadow:
+        0 0 22px
+        rgba(0, 208, 240, 0.08);
+}
+
+
+/* ADMIN SYS */
+.dual-panel--admin .dual-panel__action:hover {
+    border-color: var(--admin-primary);
+
+    background:
+        rgba(113, 109, 255, 0.07);
+
+    color: #a69aff;
+
+    box-shadow:
+        0 0 22px
+        rgba(113, 109, 255, 0.08);
+}
+
+
+/* ============================================================
+   9. CENTRAL BLACKBIRD CORE
+============================================================ */
+
+.blackbird-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 20;
+
+    width: clamp(180px, 15vw, 250px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform:
+        translate(-50%, -47%);
+
+    text-align: center;
+
+    isolation: isolate;
+}
+
+
+/* Halo derrière le logo */
+.blackbird-core__glow {
+    position: absolute;
+
+    left: 50%;
+    top: 42%;
+
+    width: 150%;
+
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 208, 240, 0.10) 0%,
+            rgba(9, 81, 172, 0.06) 28%,
+            rgba(143, 44, 249, 0.035) 48%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* Logo */
+.blackbird-core__logo {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(0, 208, 240, 0.13)
+        )
+        drop-shadow(
+            0 0 30px
+            rgba(9, 81, 172, 0.10)
+        );
+}
+
+
+/* BLACKBIRD */
+.blackbird-core__title {
+    margin-top: 18px;
+
+    color: var(--text-primary);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.34em;
+}
+
+
+/* CODER + ADMIN SYS */
+.blackbird-core__subtitle {
+    margin-top: 7px;
+
+    color: var(--text-muted);
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.62rem;
+    font-weight: 500;
+
+    letter-spacing: 0.10em;
+}
+
+
+.blackbird-core__subtitle span {
+    margin: 0 6px;
+
+    color: var(--coder-primary);
+}
+
+
+/* ============================================================
+   10. TECHNICAL BACKGROUND
+============================================================ */
+
+.dual-panel__background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.tech-element {
+    position: absolute;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size:
+        clamp(0.65rem, 0.8vw, 0.9rem);
+
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+
+    user-select: none;
+}
+
+
+/* ============================================================
+   11. CODER TECHNICAL BACKGROUND
+============================================================ */
+
+.dual-panel__background--coder
+.tech-element {
+    color: var(--signal-cyan);
+
+    opacity: 0.035;
+}
+
+
+.dual-panel__background--coder
+.tech-element--1 {
+    top: 20%;
+    left: 8%;
+}
+
+
+.dual-panel__background--coder
+.tech-element--2 {
+    top: 32%;
+    left: 64%;
+}
+
+
+.dual-panel__background--coder
+.tech-element--3 {
+    top: 71%;
+    left: 14%;
+}
+
+
+.dual-panel__background--coder
+.tech-element--4 {
+    top: 80%;
+    left: 68%;
+
+    font-size: 2rem;
+}
+
+
+.dual-panel__background--coder
+.tech-element--5 {
+    top: 16%;
+    left: 73%;
+}
+
+
+.dual-panel__background--coder
+.tech-element--6 {
+    top: 63%;
+    left: 76%;
+}
+
+
+/* ============================================================
+   12. ADMIN SYS TECHNICAL BACKGROUND
+============================================================ */
+
+.dual-panel__background--admin
+.tech-element {
+    color: #8178ff;
+
+    opacity: 0.035;
+}
+
+
+.dual-panel__background--admin
+.tech-element--1 {
+    top: 18%;
+    right: 12%;
+}
+
+
+.dual-panel__background--admin
+.tech-element--2 {
+    top: 28%;
+    right: 65%;
+}
+
+
+.dual-panel__background--admin
+.tech-element--3 {
+    top: 72%;
+    right: 14%;
+}
+
+
+.dual-panel__background--admin
+.tech-element--4 {
+    top: 82%;
+    right: 66%;
+}
+
+
+.dual-panel__background--admin
+.tech-element--5 {
+    top: 15%;
+    right: 70%;
+}
+
+
+.dual-panel__background--admin
+.tech-element--6 {
+    top: 64%;
+    right: 77%;
+
+    font-size: 1.8rem;
+}
+
+
+/* ============================================================
+   13. MODE PREVIEW
+============================================================ */
+
+.mode-preview {
+    width: min(92%, 1100px);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    padding: 100px 0;
+}
+
+
+.mode-card {
+    min-height: 230px;
+
+    padding: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)
+        );
+}
+
+
+.mode-card__symbol {
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 1.8rem;
+}
+
+
+.mode-card--coder
+.mode-card__symbol {
+    color: var(--coder-primary);
+}
+
+
+.mode-card--admin
+.mode-card__symbol {
+    color: var(--admin-primary);
+}
+
+
+.mode-card h2 {
+    margin-bottom: 10px;
+
+    font-size: 1.4rem;
+}
+
+
+.mode-card p {
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   14. DUAL MODE INTERACTION — DESKTOP
+============================================================ */
+
+@media (min-width: 901px) {
+
+    .dual-hero {
+        transition:
+            grid-template-columns
+            420ms
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+    }
+
+
+    .dual-panel {
+        transition:
+            opacity 320ms ease,
+            filter 320ms ease,
+            background 420ms ease;
+    }
+
+
+    .dual-panel__content {
+        transition:
+            transform
+            420ms
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            ),
+            opacity 320ms ease;
+    }
+
+
+    .blackbird-core {
+        transition:
+            left
+            420ms
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+    }
+
+
+    .dual-hero::after {
+        transition:
+            left
+            420ms
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+    }
+
+
+    .dual-hero::before {
+        transition:
+            left
+            420ms
+            cubic-bezier(
+                0.22,
+                1,
+                0.36,
+                1
+            );
+    }
+
+
+    /* ========================================================
+       CODER ACTIVE
+    ======================================================== */
+
+    .dual-hero.is-coder-active {
+        grid-template-columns:
+            60% 40%;
+    }
+
+
+    .dual-hero.is-coder-active
+    .blackbird-core,
+
+    .dual-hero.is-coder-active::before,
+
+    .dual-hero.is-coder-active::after {
+        left: 60%;
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder {
+        background:
+            radial-gradient(
+                circle at 35% 50%,
+                rgba(0, 208, 240, 0.075),
+                transparent 43%
+            ),
+            linear-gradient(
+                115deg,
+                rgba(0, 177, 255, 0.075),
+                transparent 48%
+            );
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder
+    .dual-panel__content {
+        transform:
+            translateX(14px);
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--admin {
+        opacity: 0.58;
+
+        filter:
+            saturate(0.75)
+            brightness(0.82);
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--admin
+    .dual-panel__content {
+        transform:
+            translateX(18px);
+    }
+
+
+    /* ========================================================
+       ADMIN SYS ACTIVE
+    ======================================================== */
+
+    .dual-hero.is-admin-active {
+        grid-template-columns:
+            40% 60%;
+    }
+
+
+    .dual-hero.is-admin-active
+    .blackbird-core,
+
+    .dual-hero.is-admin-active::before,
+
+    .dual-hero.is-admin-active::after {
+        left: 40%;
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin {
+        background:
+            radial-gradient(
+                circle at 65% 50%,
+                rgba(143, 44, 249, 0.065),
+                transparent 43%
+            ),
+            linear-gradient(
+                245deg,
+                rgba(105, 70, 255, 0.085),
+                transparent 48%
+            );
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin
+    .dual-panel__content {
+        transform:
+            translateX(-14px);
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--coder {
+        opacity: 0.58;
+
+        filter:
+            saturate(0.75)
+            brightness(0.82);
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--coder
+    .dual-panel__content {
+        transform:
+            translateX(-18px);
+    }
+
+
+    /* ========================================================
+       ACTIVE SYMBOLS
+    ======================================================== */
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder
+    .dual-panel__symbol {
+        text-shadow:
+            0 0 22px
+            rgba(0, 208, 240, 0.30),
+
+            0 0 55px
+            rgba(0, 208, 240, 0.15);
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin
+    .dual-panel__symbol {
+        text-shadow:
+            0 0 22px
+            rgba(113, 109, 255, 0.30),
+
+            0 0 55px
+            rgba(143, 44, 249, 0.13);
+    }
+
+
+    /* ========================================================
+       ACTIVE TECHNICAL BACKGROUND
+    ======================================================== */
+
+    .tech-element {
+        transition:
+            opacity 320ms ease;
+    }
+
+
+    .dual-hero.is-coder-active
+    .dual-panel--coder
+    .tech-element {
+        opacity: 0.085;
+    }
+
+
+    .dual-hero.is-admin-active
+    .dual-panel--admin
+    .tech-element {
+        opacity: 0.085;
+    }
+}
+
+
+/* ============================================================
+   15. RESPONSIVE — TABLET & MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .page-home {
+        overflow-x: hidden;
+    }
+
+
+    /* --------------------------------------------------------
+       HERO
+    --------------------------------------------------------- */
+
+    .dual-hero {
+        position: relative;
+
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        padding-top: 245px;
+
+        overflow: hidden;
+    }
+
+
+    .dual-hero::after {
+        display: none;
+    }
+
+
+    .dual-hero::before {
+        top: 145px;
+        left: 50%;
+
+        width: 320px;
+        height: 320px;
+
+        opacity: 0.8;
+
+        transform:
+            translate(-50%, -50%);
+    }
+
+
+    /* --------------------------------------------------------
+       BLACKBIRD CORE
+    --------------------------------------------------------- */
+
+    .blackbird-core {
+        display: flex;
+
+        position: absolute;
+
+        top: 92px;
+        left: 50%;
+
+        width:
+            clamp(120px, 28vw, 165px);
+
+        transform:
+            translateX(-50%);
+
+        z-index: 20;
+    }
+
+
+    .blackbird-core__glow {
+        width: 170%;
+    }
+
+
+    .blackbird-core__title {
+        margin-top: 11px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.28em;
+    }
+
+
+    .blackbird-core__subtitle {
+        margin-top: 5px;
+
+        font-size: 0.52rem;
+
+        white-space: nowrap;
+    }
+
+
+    /* --------------------------------------------------------
+       PANELS
+    --------------------------------------------------------- */
+
+    .dual-panel {
+        width: 100%;
+        min-height: auto;
+
+        justify-content: flex-start;
+
+        padding:
+            65px
+            clamp(24px, 7vw, 60px);
+
+        text-align: left;
+
+        border-top:
+            1px solid var(--border);
+    }
+
+
+    .dual-panel--coder {
+        background:
+            radial-gradient(
+                circle at 15% 50%,
+                rgba(0, 208, 240, 0.07),
+                transparent 45%
+            );
+    }
+
+
+    .dual-panel--admin {
+        justify-content: flex-start;
+
+        text-align: left;
+
+        background:
+            radial-gradient(
+                circle at 85% 50%,
+                rgba(113, 109, 255, 0.07),
+                transparent 45%
+            );
+    }
+
+
+    .dual-panel__content {
+        width: 100%;
+        max-width: 580px;
+
+        margin: 0 auto;
+    }
+
+
+    /* --------------------------------------------------------
+       SYMBOLS
+    --------------------------------------------------------- */
+
+    .dual-panel__symbol {
+        margin-bottom: 18px;
+
+        font-size:
+            clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+
+    /* --------------------------------------------------------
+       TITLES
+    --------------------------------------------------------- */
+
+    .dual-panel__title {
+        margin-bottom: 14px;
+
+        font-size:
+            clamp(2.4rem, 11vw, 4.2rem);
+
+        line-height: 0.95;
+    }
+
+
+    /* --------------------------------------------------------
+       DESCRIPTIONS
+    --------------------------------------------------------- */
+
+    .dual-panel__description,
+    .dual-panel--admin
+    .dual-panel__description {
+        max-width: 480px;
+
+        margin-left: 0;
+        margin-bottom: 24px;
+
+        font-size: 0.95rem;
+    }
+
+
+    /* --------------------------------------------------------
+       TAGS
+    --------------------------------------------------------- */
+
+    .dual-panel__topics,
+    .dual-panel--admin
+    .dual-panel__topics {
+        justify-content: flex-start;
+
+        gap: 7px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .dual-panel__topics li {
+        padding: 7px 10px;
+
+        font-size: 0.66rem;
+    }
+
+
+    /* --------------------------------------------------------
+       BUTTON
+    --------------------------------------------------------- */
+
+    .dual-panel__action {
+        min-height: 46px;
+
+        padding: 13px 18px;
+
+        touch-action: manipulation;
+    }
+
+
+    /* --------------------------------------------------------
+       TECHNICAL BACKGROUND
+    --------------------------------------------------------- */
+
+    .tech-element {
+        opacity: 0.025;
+    }
+
+
+    /* --------------------------------------------------------
+       PREVIEW
+    --------------------------------------------------------- */
+
+    .mode-preview {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 60px 0;
+    }
+
+
+    .mode-card {
+        min-height: 190px;
+
+        padding: 28px;
+    }
+}
+
+
+/* ============================================================
+   16. RESPONSIVE — SMALL MOBILE
+============================================================ */
+
+@media (max-width: 520px) {
+
+    .dual-hero {
+        padding-top: 220px;
+    }
+
+
+    /* Logo */
+    .blackbird-core {
+        top: 82px;
+
+        width: 125px;
+    }
+
+
+    .blackbird-core__title {
+        font-size: 0.56rem;
+    }
+
+
+    .blackbird-core__subtitle {
+        font-size: 0.45rem;
+    }
+
+
+    /* Panels */
+    .dual-panel {
+        padding:
+            50px
+            22px;
+    }
+
+
+    .dual-panel__symbol {
+        font-size: 2.5rem;
+    }
+
+
+    .dual-panel__title {
+        font-size:
+            clamp(2.5rem, 15vw, 3.7rem);
+    }
+
+
+    .dual-panel__description {
+        font-size: 0.88rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* Tags */
+    .dual-panel__topics {
+        gap: 6px;
+    }
+
+
+    .dual-panel__topics li {
+        font-size: 0.60rem;
+
+        letter-spacing: 0.04em;
+    }
+
+
+    /* Button */
+    .dual-panel__action {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+
+    /* Cards */
+    .mode-preview {
+        width: calc(100% - 28px);
+
+        padding: 40px 0;
+    }
+
+
+    .mode-card {
+        padding: 24px;
+
+        border-radius: 4px;
+    }
+}
+
+
+/* ============================================================
+   17. RESPONSIVE — VERY SMALL DEVICES
+============================================================ */
+
+@media (max-width: 360px) {
+
+    .dual-panel {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .dual-panel__title {
+        font-size: 2.35rem;
+    }
+
+
+    .dual-panel__topics li {
+        font-size: 0.56rem;
+    }
+
+
+    .blackbird-core {
+        width: 110px;
+    }
+}

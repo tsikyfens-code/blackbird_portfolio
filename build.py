@@ -23,11 +23,13 @@ PAGES = {
     "home": {
         "template": "home.html",
         "output": "",
+        "css": "home.css",
     },
 
     "admin-sys": {
         "template": "admin-sys.html",
         "output": "admin-sys",
+        "css": "admin-sys.css",
     },
 }
 
@@ -164,7 +166,7 @@ def get_page_paths(language, page_name):
             "home_url": "index.html",
 
             "dual_mode_url": "#dual-mode",
-            
+
             "admin_page_url": "admin-sys/index.html",
 
             "fr_url": "../fr/index.html",
@@ -340,6 +342,12 @@ def build_page(language, page_name):
         path_variables,
         language_variables
     )
+
+    # --------------------------------------------------------
+    # CSS propre à la page
+    # --------------------------------------------------------
+
+    variables["page_css"] = page_config["css"]
 
 
     # --------------------------------------------------------
