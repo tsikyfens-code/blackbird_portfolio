@@ -1,0 +1,28 @@
+{
+    "page_title": "BLACKBIRD | Développement & Administration Système",
+    "body_class": "page-home",
+
+    "coder_description": "Développement, programmation et automatisation.",
+
+    "coder_topic_web": "Développement web",
+    "coder_topic_software": "Développement logiciel",
+    "coder_topic_automation": "Automatisation",
+    "coder_topic_applications": "Applications",
+
+    "explore_coder": "Explorer Coder",
+
+    "admin_description": "Systèmes, réseaux et infrastructure.",
+
+    "admin_topic_systems": "Systèmes",
+    "admin_topic_networks": "Réseaux",
+    "admin_topic_servers": "Serveurs",
+    "admin_topic_virtualization": "Virtualisation",
+
+    "explore_admin": "Explorer Admin Sys",
+
+    "coder_card_description": "Développement et programmation.",
+
+    "admin_card_description": "Administration système, réseau et infrastructure.",
+
+    "mode_preview_aria_label": "Aperçu des domaines BLACKBIRD"
+}

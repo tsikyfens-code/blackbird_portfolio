@@ -1,0 +1,104 @@
+{
+    "page_title": "BLACKBIRD | Systems & Network Administration",
+    "body_class": "page-admin-sys",
+
+    "admin_page_intro": "Installation, configuration and administration of systems, servers, networks and virtualized environments.",
+
+    "admin_domains_aria_label": "System administration skill areas",
+    "admin_section_nav_aria_label": "ADMIN SYS skills navigation",
+
+    "admin_nav_systems": "Systems",
+    "admin_nav_servers": "Servers",
+    "admin_nav_networks": "Networks",
+    "admin_nav_virtualization": "Virtualization",
+
+    "systems_title": "SYSTEMS",
+
+    "systems_intro": "Installation, configuration and customization of Windows and Linux operating systems.",
+
+    "systems_windows_title": "Windows",
+
+    "systems_windows_description": "Installation and configuration of different Microsoft Windows versions on workstations.",
+
+    "systems_linux_title": "Linux",
+
+    "systems_linux_description": "Installation and configuration of Linux distributions for different uses and environments.",
+
+    "systems_dualboot_title": "Dual Boot",
+
+    "systems_dualboot_description": "Implementation of configurations allowing multiple operating systems to be used on the same computer.",
+
+    "systems_customization_title": "Customization & optimization",
+
+    "systems_customization_description": "Windows customization, system settings adjustment and service configuration according to the needs of the environment.",
+
+    "systems_image_caption": "Operating system installation and configuration.",
+
+    "servers_title": "SERVERS",
+
+    "servers_intro": "Deployment and administration of Linux and Windows servers, domain environments and computer fleets.",
+
+    "servers_linux_title": "Linux Servers",
+
+    "servers_linux_description": "Installation and configuration of Ubuntu Server and network services such as domain controllers and DHCP servers.",
+
+    "servers_windows_title": "Windows Servers",
+
+    "servers_windows_description": "Installation and administration of Windows Server 2019 for different infrastructure requirements.",
+
+    "servers_domain_title": "Domain & fleet management",
+
+    "servers_domain_description": "User and workstation management, integration of Windows computers into an Active Directory domain and administration of Group Policies.",
+
+    "servers_remote_title": "Remote administration",
+
+    "servers_remote_description": "Use of Remote Desktop and RDP to remotely administer workstations and servers.",
+
+    "servers_image_caption": "Server administration and Active Directory environment management.",
+
+    "networks_title": "NETWORKS",
+
+    "networks_intro": "Deployment and configuration of network infrastructure, from physical cabling to network device configuration.",
+
+    "networks_cabling_title": "Network cabling",
+
+    "networks_cabling_description": "Installation and use of RJ45 Ethernet cabling for connecting network devices.",
+
+    "networks_ip_title": "IP addressing",
+
+    "networks_ip_description": "Configuration of static IPv4 addresses and network settings for workstations and devices.",
+
+    "networks_mikrotik_description": "Configuration of MikroTik routers and their main networking functions according to infrastructure requirements.",
+
+    "networks_cisco_description": "Configuration of Cisco routers and implementation of network settings required by the infrastructure.",
+
+    "networks_router_title": "Routers",
+
+    "networks_router_description": "Configuration of standard routers for network access, addressing and device connectivity.",
+
+    "networks_image_caption": "Network configuration, cabling and router administration.",
+
+    "virtualization_title": "VIRTUALIZATION",
+
+    "virtualization_intro": "Creation and administration of virtual environments for laboratories, testing and system deployment.",
+
+    "virtualization_vmware_description": "Creation, configuration and operation of virtual machines using VMware.",
+
+    "virtualization_virtualbox_description": "Creation and configuration of virtual environments using Oracle VirtualBox.",
+
+    "virtualization_network_title": "Virtual networking",
+
+    "virtualization_network_description": "Configuration of virtual network adapters and connection modes between virtual machines, hosts and networks.",
+
+    "virtualization_resources_title": "Resource management",
+
+    "virtualization_resources_description": "Allocation and optimization of resources used by virtual machines according to host system capabilities.",
+
+    "virtualization_troubleshooting_title": "Troubleshooting",
+
+    "virtualization_troubleshooting_description": "Diagnosis and resolution of common issues involving VMware, VirtualBox, virtual networking and virtual machine operation.",
+
+    "virtualization_image_caption": "Creation, configuration and administration of virtualized environments.",
+
+    "admin_end_text": "Systems. Servers. Networks. Virtualization."
+}

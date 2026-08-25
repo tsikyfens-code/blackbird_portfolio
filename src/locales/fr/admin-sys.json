@@ -1,0 +1,104 @@
+{
+    "page_title": "BLACKBIRD | Administration Système & Réseaux",
+    "body_class": "page-admin-sys",
+
+    "admin_page_intro": "Installation, configuration et administration de systèmes, serveurs, réseaux et environnements virtualisés.",
+
+    "admin_domains_aria_label": "Domaines de compétences en administration système",
+    "admin_section_nav_aria_label": "Navigation dans les compétences ADMIN SYS",
+
+    "admin_nav_systems": "Systèmes",
+    "admin_nav_servers": "Serveurs",
+    "admin_nav_networks": "Réseaux",
+    "admin_nav_virtualization": "Virtualisation",
+
+    "systems_title": "SYSTÈMES",
+
+    "systems_intro": "Installation, configuration et personnalisation de systèmes d’exploitation Windows et Linux.",
+
+    "systems_windows_title": "Windows",
+
+    "systems_windows_description": "Installation et configuration de différentes versions de Microsoft Windows sur des postes de travail.",
+
+    "systems_linux_title": "Linux",
+
+    "systems_linux_description": "Installation et configuration de distributions Linux pour différents usages et environnements.",
+
+    "systems_dualboot_title": "Dual Boot",
+
+    "systems_dualboot_description": "Mise en place de configurations permettant l’utilisation de plusieurs systèmes d’exploitation sur une même machine.",
+
+    "systems_customization_title": "Personnalisation & optimisation",
+
+    "systems_customization_description": "Personnalisation de Windows, ajustement des paramètres système et désactivation de services selon les besoins de l’environnement.",
+
+    "systems_image_caption": "Installation et configuration de systèmes d’exploitation.",
+
+    "servers_title": "SERVEURS",
+
+    "servers_intro": "Déploiement et administration de serveurs Linux et Windows ainsi que gestion d’environnements de domaine et de parcs informatiques.",
+
+    "servers_linux_title": "Serveurs Linux",
+
+    "servers_linux_description": "Installation et configuration d’Ubuntu Server ainsi que mise en place de services réseau tels qu’un contrôleur de domaine et un serveur DHCP.",
+
+    "servers_windows_title": "Serveurs Windows",
+
+    "servers_windows_description": "Installation et administration de Windows Server 2019 pour différents besoins d’infrastructure.",
+
+    "servers_domain_title": "Domaine & gestion de parc",
+
+    "servers_domain_description": "Gestion des utilisateurs et des postes, intégration de machines Windows dans un domaine Active Directory et administration des stratégies de groupe.",
+
+    "servers_remote_title": "Administration à distance",
+
+    "servers_remote_description": "Utilisation du Bureau à distance et du protocole RDP pour administrer des postes et serveurs à distance.",
+
+    "servers_image_caption": "Administration de serveurs et gestion d’environnements Active Directory.",
+
+    "networks_title": "RÉSEAUX",
+
+    "networks_intro": "Mise en place et configuration d’infrastructures réseau, depuis le câblage physique jusqu’à la configuration des équipements.",
+
+    "networks_cabling_title": "Câblage réseau",
+
+    "networks_cabling_description": "Réalisation et utilisation de câblages Ethernet RJ45 pour la connexion des équipements réseau.",
+
+    "networks_ip_title": "Adressage IP",
+
+    "networks_ip_description": "Configuration d’adresses IPv4 statiques et paramétrage réseau des postes et équipements.",
+
+    "networks_mikrotik_description": "Configuration de routeurs MikroTik et paramétrage des principales fonctions réseau selon les besoins de l’infrastructure.",
+
+    "networks_cisco_description": "Configuration de routeurs Cisco et mise en œuvre des paramètres réseau nécessaires au fonctionnement de l’infrastructure.",
+
+    "networks_router_title": "Routeurs",
+
+    "networks_router_description": "Configuration de routeurs standards pour l’accès réseau, l’adressage et la connexion des différents équipements.",
+
+    "networks_image_caption": "Configuration réseau, câblage et administration de routeurs.",
+
+    "virtualization_title": "VIRTUALISATION",
+
+    "virtualization_intro": "Création et administration d’environnements virtuels pour les laboratoires, les tests et le déploiement de systèmes.",
+
+    "virtualization_vmware_description": "Création, configuration et utilisation de machines virtuelles avec VMware.",
+
+    "virtualization_virtualbox_description": "Création et configuration d’environnements virtuels avec Oracle VirtualBox.",
+
+    "virtualization_network_title": "Réseau virtuel",
+
+    "virtualization_network_description": "Configuration des adaptateurs réseau virtuels et des différents modes de connexion entre machines virtuelles, hôte et réseau.",
+
+    "virtualization_resources_title": "Gestion des ressources",
+
+    "virtualization_resources_description": "Allocation et optimisation des ressources utilisées par les machines virtuelles selon les capacités de la machine hôte.",
+
+    "virtualization_troubleshooting_title": "Dépannage",
+
+    "virtualization_troubleshooting_description": "Diagnostic et résolution de problèmes courants liés à VMware, VirtualBox, aux réseaux virtuels et au fonctionnement des machines virtuelles.",
+
+    "virtualization_image_caption": "Création, configuration et administration d’environnements virtualisés.",
+
+    "admin_end_text": "Systèmes. Serveurs. Réseaux. Virtualisation."
+}

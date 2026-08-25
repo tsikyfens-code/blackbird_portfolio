@@ -16,7 +16,24 @@ LOCALES_DIR = SRC_DIR / "locales"
 
 LAYOUT_FILE = SRC_DIR / "layout.html"
 HEADER_FILE = COMPONENTS_DIR / "header.html"
-HOME_FILE = PAGES_DIR / "home.html"
+
+
+# Pages du portfolio
+PAGES = {
+    "home": {
+        "template": "home.html",
+        "output": "",
+    },
+
+    "admin-sys": {
+        "template": "admin-sys.html",
+        "output": "admin-sys",
+    },
+}
+
+
+# Langues disponibles
+LANGUAGES = ("fr", "en")
 
 
 # ============================================================
@@ -32,16 +49,34 @@ def load_json(path):
         return json.load(file)
 
 
+def merge_dicts(*dictionaries):
+    """
+    Fusionne plusieurs dictionnaires.
+
+    Les valeurs des dictionnaires placés à droite
+    remplacent celles portant le même nom à gauche.
+    """
+
+    result = {}
+
+    for dictionary in dictionaries:
+        result.update(dictionary)
+
+    return result
+
+
 def render_template(template, variables):
     """
-    Remplace les variables de type :
+    Remplace :
 
         {{variable}}
 
-    par les valeurs contenues dans le dictionnaire variables.
+    par la valeur correspondante.
     """
 
-    pattern = re.compile(r"\{\{\s*([a-zA-Z0-9_]+)\s*\}\}")
+    pattern = re.compile(
+        r"\{\{\s*([a-zA-Z0-9_]+)\s*\}\}"
+    )
 
     def replace(match):
         key = match.group(1)
@@ -58,8 +93,8 @@ def render_template(template, variables):
 
 def check_unresolved_variables(content):
     """
-    Vérifie qu'aucune variable {{...}} n'est restée
-    dans le HTML généré.
+    Vérifie qu'aucune variable {{...}}
+    ne reste dans le HTML généré.
     """
 
     unresolved = re.findall(
@@ -75,82 +110,240 @@ def check_unresolved_variables(content):
 
 
 # ============================================================
-# GÉNÉRATION DE LA HOMEPAGE
+# CHARGEMENT DES TRADUCTIONS
 # ============================================================
 
-def build_home(language):
-    print(f"Construction de la Homepage [{language.upper()}]...")
+def load_locale(language, page_name):
 
-    # --------------------------------------------------------
-    # Chargement des fichiers sources
-    # --------------------------------------------------------
+    common_file = (
+        LOCALES_DIR
+        / language
+        / "common.json"
+    )
 
-    layout_template = read_text(LAYOUT_FILE)
-    header_template = read_text(HEADER_FILE)
-    home_template = read_text(HOME_FILE)
-
-    locale_file = LOCALES_DIR / f"{language}.json"
-    locale = load_json(locale_file)
-
-
-    # --------------------------------------------------------
-    # Variables propres à la Homepage
-    # --------------------------------------------------------
-
-    variables = dict(locale)
-
-    variables.update({
-        # Depuis /fr/index.html ou /en/index.html
-        # les ressources communes se trouvent un niveau plus haut.
-        "root_path": "../",
-
-        # Navigation
-        "home_url": "index.html",
-        "dual_mode_url": "#dual-mode",
-
-        # Changement de langue
-        "fr_url": "../fr/index.html",
-        "en_url": "../en/index.html",
-    })
+    page_file = (
+        LOCALES_DIR
+        / language
+        / f"{page_name}.json"
+    )
 
 
-    # --------------------------------------------------------
-    # État du sélecteur de langue
-    # --------------------------------------------------------
+    if not common_file.exists():
+        raise FileNotFoundError(
+            f"Fichier commun introuvable : {common_file}"
+        )
+
+
+    if not page_file.exists():
+        raise FileNotFoundError(
+            f"Fichier de page introuvable : {page_file}"
+        )
+
+
+    common_data = load_json(common_file)
+    page_data = load_json(page_file)
+
+
+    return merge_dicts(
+        common_data,
+        page_data
+    )
+
+
+# ============================================================
+# CHEMINS DES PAGES
+# ============================================================
+
+def get_page_paths(language, page_name):
+
+    if page_name == "home":
+
+        return {
+            "root_path": "../",
+
+            "home_url": "index.html",
+
+            "dual_mode_url": "#dual-mode",
+            
+            "admin_page_url": "admin-sys/index.html",
+
+            "fr_url": "../fr/index.html",
+
+            "en_url": "../en/index.html",
+
+            "home_aria_current": 'aria-current="page"',
+        }
+
+
+    if page_name == "admin-sys":
+
+        return {
+            "root_path": "../../",
+
+            "home_url": "../index.html",
+
+            "dual_mode_url": "../index.html#dual-mode",
+
+            "fr_url": "../../fr/admin-sys/index.html",
+
+            "en_url": "../../en/admin-sys/index.html",
+
+            "home_aria_current": "",
+        }
+
+
+    raise ValueError(
+        f"Configuration de chemins absente pour : {page_name}"
+    )
+
+
+# ============================================================
+# ÉTAT DU SÉLECTEUR DE LANGUE
+# ============================================================
+
+def get_language_state(language):
 
     if language == "fr":
-        variables.update({
+
+        return {
             "fr_active_class": "is-active",
             "en_active_class": "",
 
             "fr_aria_current": 'aria-current="page"',
             "en_aria_current": "",
-        })
+        }
 
-    elif language == "en":
-        variables.update({
+
+    if language == "en":
+
+        return {
             "fr_active_class": "",
             "en_active_class": "is-active",
 
             "fr_aria_current": "",
             "en_aria_current": 'aria-current="page"',
-        })
+        }
 
+
+    raise ValueError(
+        f"Langue non prise en charge : {language}"
+    )
+
+
+# ============================================================
+# DESTINATION
+# ============================================================
+
+def get_output_file(language, page_name):
+
+    page_config = PAGES[page_name]
+
+    output_part = page_config["output"]
+
+
+    # Homepage
+    if output_part == "":
+
+        output_dir = BASE_DIR / language
+
+
+    # Pages internes
     else:
-        raise ValueError(
-            f"Langue non prise en charge : {language}"
+
+        output_dir = (
+            BASE_DIR
+            / language
+            / output_part
         )
 
 
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    return output_dir / "index.html"
+
+
+# ============================================================
+# GÉNÉRATION D'UNE PAGE
+# ============================================================
+
+def build_page(language, page_name):
+
+    print(
+        f"Construction : "
+        f"{page_name} [{language.upper()}]..."
+    )
+
+
     # --------------------------------------------------------
-    # Homepage active dans la navigation
+    # Sources
     # --------------------------------------------------------
 
-    variables["home_aria_current"] = 'aria-current="page"'
+    layout_template = read_text(
+        LAYOUT_FILE
+    )
+
+    header_template = read_text(
+        HEADER_FILE
+    )
+
+
+    page_config = PAGES[page_name]
+
+    page_template_file = (
+        PAGES_DIR
+        / page_config["template"]
+    )
+
+
+    if not page_template_file.exists():
+        raise FileNotFoundError(
+            f"Template introuvable : "
+            f"{page_template_file}"
+        )
+
+
+    page_template = read_text(
+        page_template_file
+    )
 
 
     # --------------------------------------------------------
-    # Génération du header
+    # Traductions
+    # --------------------------------------------------------
+
+    locale_variables = load_locale(
+        language,
+        page_name
+    )
+
+
+    # --------------------------------------------------------
+    # Variables générales
+    # --------------------------------------------------------
+
+    path_variables = get_page_paths(
+        language,
+        page_name
+    )
+
+    language_variables = get_language_state(
+        language
+    )
+
+
+    variables = merge_dicts(
+        locale_variables,
+        path_variables,
+        language_variables
+    )
+
+
+    # --------------------------------------------------------
+    # Header
     # --------------------------------------------------------
 
     rendered_header = render_template(
@@ -160,29 +353,30 @@ def build_home(language):
 
 
     # --------------------------------------------------------
-    # Génération du contenu de la Homepage
+    # Contenu de la page
     # --------------------------------------------------------
 
-    rendered_home = render_template(
-        home_template,
+    rendered_content = render_template(
+        page_template,
         variables
     )
 
 
     # --------------------------------------------------------
-    # Injection dans le layout général
+    # Layout final
     # --------------------------------------------------------
 
-    page_variables = dict(variables)
+    final_variables = dict(variables)
 
-    page_variables.update({
+    final_variables.update({
         "header": rendered_header,
-        "content": rendered_home,
+        "content": rendered_content,
     })
+
 
     final_html = render_template(
         layout_template,
-        page_variables
+        final_variables
     )
 
 
@@ -190,21 +384,19 @@ def build_home(language):
     # Vérification
     # --------------------------------------------------------
 
-    check_unresolved_variables(final_html)
-
-
-    # --------------------------------------------------------
-    # Dossier de destination
-    # --------------------------------------------------------
-
-    output_dir = BASE_DIR / language
-
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True
+    check_unresolved_variables(
+        final_html
     )
 
-    output_file = output_dir / "index.html"
+
+    # --------------------------------------------------------
+    # Destination
+    # --------------------------------------------------------
+
+    output_file = get_output_file(
+        language,
+        page_name
+    )
 
 
     # --------------------------------------------------------
@@ -216,8 +408,10 @@ def build_home(language):
         encoding="utf-8"
     )
 
+
     print(
-        f"OK : {output_file.relative_to(BASE_DIR)}"
+        f"OK : "
+        f"{output_file.relative_to(BASE_DIR)}"
     )
 
 
@@ -226,14 +420,23 @@ def build_home(language):
 # ============================================================
 
 def build():
+
     print()
     print("========================================")
     print("       BLACKBIRD STATIC BUILDER")
     print("========================================")
     print()
 
-    build_home("fr")
-    build_home("en")
+
+    for language in LANGUAGES:
+
+        for page_name in PAGES:
+
+            build_page(
+                language,
+                page_name
+            )
+
 
     print()
     print("========================================")
