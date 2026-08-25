@@ -1569,3 +1569,117 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ============================================================
+   LANGUAGE ENTRY PAGE
+============================================================ */
+
+.language-entry-page {
+    min-height: 100vh;
+}
+
+.language-entry {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 30px;
+}
+
+.language-entry__content {
+    width: min(100%, 520px);
+
+    text-align: center;
+}
+
+.language-entry__symbol {
+    margin-bottom: 30px;
+
+    color: var(--signal-cyan);
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.12em;
+}
+
+.language-entry__title {
+    font-size: clamp(2.8rem, 9vw, 5.5rem);
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1;
+}
+
+.language-entry__subtitle {
+    margin-top: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+}
+
+.language-entry__choices {
+    margin-top: 45px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.language-entry__choices a {
+    padding: 15px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 3px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    transition:
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.language-entry__choices a:first-child:hover {
+    border-color: var(--signal-cyan);
+
+    color: var(--signal-cyan);
+
+    background: rgba(0, 208, 240, 0.05);
+
+    transform: translateY(-2px);
+}
+
+.language-entry__choices a:last-child:hover {
+    border-color: var(--admin-primary);
+
+    color: var(--admin-primary);
+
+    background: rgba(113, 109, 255, 0.05);
+
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 520px) {
+
+    .language-entry__choices {
+        grid-template-columns: 1fr;
+    }
+
+}
