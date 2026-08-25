@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
@@ -11,96 +10,94 @@
 
     <title>BLACKBIRD | Development & System Administration</title>
 
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
+    <meta
+        name="description"
+        content="BLACKBIRD portfolio — development, programming, system administration, networks, servers and virtualization."
     >
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="page-home">
 
+    <!-- ======================================================
+         HEADER
+    ======================================================= -->
     <header class="site-header">
 
-    <nav
-        class="main-nav"
-        aria-label="Main navigation"
-    >
+        <nav class="main-nav" aria-label="Main navigation">
 
-        <!-- Identité BLACKBIRD -->
-        <a
-            class="brand"
-            href="index.html"
-            aria-label="BLACKBIRD — Home"
-        >
-            <span
-                class="brand__logo"
-                aria-hidden="true"
+            <!-- Identité BLACKBIRD -->
+            <a
+                class="brand"
+                href="#home"
+                aria-label="BLACKBIRD — Home"
             >
-                BLACKBIRD
-            </span>
-        </a>
+                <span class="brand__logo" aria-hidden="true">
+                    <!-- Le véritable logo sera intégré après validation -->
+                    BLACKBIRD
+                </span>
+            </a>
 
 
-        <!-- Navigation principale -->
-        <ul class="main-nav__links">
+            <!-- Navigation principale -->
+            <ul class="main-nav__links">
+                <li>
+                    <a href="#home" aria-current="page">
+                        Accueil
+                    </a>
+                </li>
 
-            <li>
+                <li>
+                    <a href="#dual-mode">
+                        Dual Mode
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- Sélecteur de langue -->
+            <div
+                class="language-switch"
+                aria-label="Language selection"
+            >
                 <a
-                    href="index.html"
+                    class="language-switch__item"
+                    href="../fr/index.html"
+                    lang="fr"
+                    hreflang="fr"
+                >
+                    FR
+                </a>
+
+                <span
+                    class="language-switch__separator"
+                    aria-hidden="true"
+                >
+                    |
+                </span>
+
+                <a
+                    class="language-switch__item is-active"
+                    href="../en/index.html"
+                    lang="en"
+                    hreflang="en"
                     aria-current="page"
                 >
-                    Home
+                    EN
                 </a>
-            </li>
+            </div>
 
-            <li>
-                <a href="#dual-mode">
-                    Dual Mode
-                </a>
-            </li>
+        </nav>
 
-        </ul>
+    </header>
 
 
-        <!-- Sélecteur de langue -->
-        <div
-            class="language-switch"
-            aria-label="Language selection"
-        >
-
-            <a
-                class="language-switch__item "
-                href="../fr/index.html"
-                lang="fr"
-                hreflang="fr"
-                
-            >
-                FR
-            </a>
-
-            <span
-                class="language-switch__separator"
-                aria-hidden="true"
-            >
-                |
-            </span>
-
-            <a
-                class="language-switch__item is-active"
-                href="../en/index.html"
-                lang="en"
-                hreflang="en"
-                aria-current="page"
-            >
-                EN
-            </a>
-
-        </div>
-
-    </nav>
-
-</header>
-
+    <!-- ======================================================
+         MAIN
+    ======================================================= -->
     <main id="home">
 
         <!-- ==================================================
@@ -130,11 +127,11 @@
                     </span>
 
                     <h2 class="dual-panel__title">
-                        CODER test
+                        CODER
                     </h2>
 
                     <p class="dual-panel__description">
-                        Development, programming and automation.
+                        Development, programming and automation..
                     </p>
 
                     <ul class="dual-panel__topics">
@@ -260,7 +257,7 @@
         =================================================== -->
         <section
             class="mode-preview"
-            aria-label="Overview of BLACKBIRD domains"
+            aria-label="Aperçu des domaines BLACKBIRD"
         >
 
             <!-- Carte Coder -->
@@ -313,11 +310,7 @@
         </section>
 
     </main>
-
-    <script
-        src="../js/main.js"
-        defer
-    ></script>
+    <script src="../js/main.js" defer></script>
 
 </body>
 </html>

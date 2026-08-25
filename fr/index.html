@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,93 +11,96 @@
 
     <title>BLACKBIRD | Développement & Administration Système</title>
 
-    <meta
-        name="description"
-        content="Portfolio BLACKBIRD — développement, programmation, administration système, réseaux, serveurs et virtualisation."
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
     >
-
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="page-home">
 
-    <!-- ======================================================
-         HEADER
-    ======================================================= -->
     <header class="site-header">
 
-        <nav class="main-nav" aria-label="Navigation principale">
+    <nav
+        class="main-nav"
+        aria-label="Navigation principale"
+    >
 
-            <!-- Identité BLACKBIRD -->
-            <a
-                class="brand"
-                href="#home"
-                aria-label="BLACKBIRD — Accueil"
+        <!-- Identité BLACKBIRD -->
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="BLACKBIRD — Accueil"
+        >
+            <span
+                class="brand__logo"
+                aria-hidden="true"
             >
-                <span class="brand__logo" aria-hidden="true">
-                    <!-- Le véritable logo sera intégré après validation -->
-                    BLACKBIRD
-                </span>
-            </a>
+                BLACKBIRD
+            </span>
+        </a>
 
 
-            <!-- Navigation principale -->
-            <ul class="main-nav__links">
-                <li>
-                    <a href="#home" aria-current="page">
-                        Accueil
-                    </a>
-                </li>
+        <!-- Navigation principale -->
+        <ul class="main-nav__links">
 
-                <li>
-                    <a href="#dual-mode">
-                        Dual Mode
-                    </a>
-                </li>
-            </ul>
-
-
-            <!-- Sélecteur de langue -->
-            <div
-                class="language-switch"
-                aria-label="Sélection de la langue"
-            >
+            <li>
                 <a
-                    class="language-switch__item is-active"
-                    href="../fr/index.html"
-                    lang="fr"
-                    hreflang="fr"
+                    href="index.html"
                     aria-current="page"
                 >
-                    FR
+                    Accueil
                 </a>
+            </li>
 
-                <span
-                    class="language-switch__separator"
-                    aria-hidden="true"
-                >
-                    |
-                </span>
-
-                <a
-                    class="language-switch__item"
-                    href="../en/index.html"
-                    lang="en"
-                    hreflang="en"
-                >
-                    EN
+            <li>
+                <a href="#dual-mode">
+                    Dual Mode
                 </a>
-            </div>
+            </li>
 
-        </nav>
-
-    </header>
+        </ul>
 
 
-    <!-- ======================================================
-         MAIN
-    ======================================================= -->
+        <!-- Sélecteur de langue -->
+        <div
+            class="language-switch"
+            aria-label="Sélection de la langue"
+        >
+
+            <a
+                class="language-switch__item is-active"
+                href="../fr/index.html"
+                lang="fr"
+                hreflang="fr"
+                aria-current="page"
+            >
+                FR
+            </a>
+
+            <span
+                class="language-switch__separator"
+                aria-hidden="true"
+            >
+                |
+            </span>
+
+            <a
+                class="language-switch__item "
+                href="../en/index.html"
+                lang="en"
+                hreflang="en"
+                
+            >
+                EN
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
     <main id="home">
 
         <!-- ==================================================
@@ -126,7 +130,7 @@
                     </span>
 
                     <h2 class="dual-panel__title">
-                        CODER
+                        CODER test
                     </h2>
 
                     <p class="dual-panel__description">
@@ -309,7 +313,11 @@
         </section>
 
     </main>
-    <script src="../js/main.js" defer></script>
+
+    <script
+        src="../js/main.js"
+        defer
+    ></script>
 
 </body>
 </html>

@@ -1,0 +1,81 @@
+<header class="site-header">
+
+    <nav
+        class="main-nav"
+        aria-label="{{nav_aria_label}}"
+    >
+
+        <!-- Identité BLACKBIRD -->
+        <a
+            class="brand"
+            href="{{home_url}}"
+            aria-label="{{brand_aria_label}}"
+        >
+            <span
+                class="brand__logo"
+                aria-hidden="true"
+            >
+                BLACKBIRD
+            </span>
+        </a>
+
+
+        <!-- Navigation principale -->
+        <ul class="main-nav__links">
+
+            <li>
+                <a
+                    href="{{home_url}}"
+                    {{home_aria_current}}
+                >
+                    {{nav_home}}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{dual_mode_url}}">
+                    Dual Mode
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Sélecteur de langue -->
+        <div
+            class="language-switch"
+            aria-label="{{language_switch_label}}"
+        >
+
+            <a
+                class="language-switch__item {{fr_active_class}}"
+                href="{{fr_url}}"
+                lang="fr"
+                hreflang="fr"
+                {{fr_aria_current}}
+            >
+                FR
+            </a>
+
+            <span
+                class="language-switch__separator"
+                aria-hidden="true"
+            >
+                |
+            </span>
+
+            <a
+                class="language-switch__item {{en_active_class}}"
+                href="{{en_url}}"
+                lang="en"
+                hreflang="en"
+                {{en_aria_current}}
+            >
+                EN
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>

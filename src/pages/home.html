@@ -1,107 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>BLACKBIRD | Development & System Administration</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-</head>
-
-<body class="page-home">
-
-    <header class="site-header">
-
-    <nav
-        class="main-nav"
-        aria-label="Main navigation"
-    >
-
-        <!-- Identité BLACKBIRD -->
-        <a
-            class="brand"
-            href="index.html"
-            aria-label="BLACKBIRD — Home"
-        >
-            <span
-                class="brand__logo"
-                aria-hidden="true"
-            >
-                BLACKBIRD
-            </span>
-        </a>
-
-
-        <!-- Navigation principale -->
-        <ul class="main-nav__links">
-
-            <li>
-                <a
-                    href="index.html"
-                    aria-current="page"
-                >
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#dual-mode">
-                    Dual Mode
-                </a>
-            </li>
-
-        </ul>
-
-
-        <!-- Sélecteur de langue -->
-        <div
-            class="language-switch"
-            aria-label="Language selection"
-        >
-
-            <a
-                class="language-switch__item "
-                href="../fr/index.html"
-                lang="fr"
-                hreflang="fr"
-                
-            >
-                FR
-            </a>
-
-            <span
-                class="language-switch__separator"
-                aria-hidden="true"
-            >
-                |
-            </span>
-
-            <a
-                class="language-switch__item is-active"
-                href="../en/index.html"
-                lang="en"
-                hreflang="en"
-                aria-current="page"
-            >
-                EN
-            </a>
-
-        </div>
-
-    </nav>
-
-</header>
-
-    <main id="home">
+<main id="home">
 
         <!-- ==================================================
              HERO — BLACKBIRD DUAL MODE
@@ -134,21 +31,21 @@
                     </h2>
 
                     <p class="dual-panel__description">
-                        Development, programming and automation.
+                        {{coder_description}}
                     </p>
 
                     <ul class="dual-panel__topics">
-                        <li>Web Development</li>
-                        <li>Software Development</li>
-                        <li>Automation</li>
-                        <li>Applications</li>
+                        <li>{{coder_topic_web}}</li>
+                        <li>{{coder_topic_software}}</li>
+                        <li>{{coder_topic_automation}}</li>
+                        <li>{{coder_topic_applications}}</li>
                     </ul>
 
                     <a
                         class="dual-panel__action"
                         href="#coder-preview"
                     >
-                        Explore Coder
+                        {{explore_coder}}
                     </a>
 
                 </div>
@@ -178,7 +75,7 @@
 
                 <img
                     class="blackbird-core__logo"
-                    src="../assets/logo/blackbird-logo.png"
+                    src="{{root_path}}assets/logo/blackbird-logo.png"
                     alt="BLACKBIRD"
                 >
 
@@ -218,21 +115,21 @@
                     </h2>
 
                     <p class="dual-panel__description">
-                        Systems, networks and infrastructure.
+                        {{admin_description}}
                     </p>
 
                     <ul class="dual-panel__topics">
-                        <li>Systems</li>
-                        <li>Networks</li>
-                        <li>Servers</li>
-                        <li>Virtualization</li>
+                        <li>{{admin_topic_systems}}</li>
+                        <li>{{admin_topic_networks}}</li>
+                        <li>{{admin_topic_servers}}</li>
+                        <li>{{admin_topic_virtualization}}</li>
                     </ul>
 
                     <a
                         class="dual-panel__action"
                         href="#admin-preview"
                     >
-                        Explore Admin Sys
+                        {{explore_admin}}
                     </a>
 
                 </div>
@@ -260,7 +157,7 @@
         =================================================== -->
         <section
             class="mode-preview"
-            aria-label="Overview of BLACKBIRD domains"
+            aria-label="{{mode_preview_aria_label}}"
         >
 
             <!-- Carte Coder -->
@@ -281,7 +178,7 @@
                 </h2>
 
                 <p>
-                    Development and programming.
+                    {{coder_card_description}}
                 </p>
 
             </article>
@@ -305,7 +202,7 @@
                 </h2>
 
                 <p>
-                    System, network and infrastructure administration.
+                    {{admin_card_description}}
                 </p>
 
             </article>
@@ -313,11 +210,3 @@
         </section>
 
     </main>
-
-    <script
-        src="../js/main.js"
-        defer
-    ></script>
-
-</body>
-</html>
